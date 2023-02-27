@@ -1,5 +1,14 @@
 // Node server which will handle socket io
-// const io = require('socket.io')(8080)   
+// const io = require('socket.io')(8080)  
+const express = require('express');
+const app = express();
+const port = 8080;
+app.get('/',(req,res)=>{
+    res.send("Hello World!")
+});
+app.listen(port,()=>{
+    console.log(`Example app listening at port: ${port}`);
+});
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
     cors: {
